@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Roadmaps | Claude Certification Hub</title><meta name="description" content="Independent source-backed Claude certification study resource."><link rel="stylesheet" href="assets/styles.css"></head><body><header><div class="wrap"><nav>
+<a class="brand" href="index.html">Claude <span>Certification Hub</span></a>
+<div class="links">
+<a href="index.html#certifications">Certifications</a><a href="roadmaps.html">Roadmaps</a><a href="learn/index.html">Learn</a>
+<a href="practice.html">Practice</a><a href="resources.html">Resources</a><a href="updates.html">Updates</a><a href="about.html">About</a>
+</div><button class="menu">Menu</button></nav></div></header><main><section class="hero"><div class="wrap article"><div class="eyebrow">Study planner</div><h1>Roadmaps that fit your time.</h1><p class="lead">Choose a certification, experience level and time window. The page gives you a practical preparation route.</p></div></section>
+<section><div class="wrap"><div class="grid"><div class="card selector"><h3>Build a recommendation</h3>
+<label>Certification</label><select id="certSel"><option value="associate">Associate – Foundations</option><option value="developer">Developer – Foundations</option><option value="architectf">Architect – Foundations</option><option value="architectp">Architect – Professional</option></select>
+<label>Experience</label><select id="expSel"><option value="new">New to Claude / GenAI</option><option value="some">Some hands-on experience</option><option value="strong">Strong GenAI / Claude experience</option></select>
+<label>Time available</label><select id="daysSel"><option value="7">7 days</option><option value="14">14 days</option></select>
+<div class="actions"><button class="btn primary" onclick="buildPlan()">Generate plan</button></div></div>
+<div class="card"><h3>Your recommended emphasis</h3><div id="planOut"><p class="kicker">Choose your options and generate a plan.</p></div></div></div></div></section>
+<section id="seven"><div class="wrap article"><div class="eyebrow">7-day sprint</div><h2>For experienced practitioners or final revision.</h2><ol><li><strong>Scope:</strong> Read the current exam guide and map every task statement.</li><li><strong>Core:</strong> Review Claude platform/model fundamentals and role-specific concepts.</li><li><strong>Build:</strong> Prompting, tools, context and workflow/agent patterns.</li><li><strong>Production:</strong> Evals, security, cost, reliability and governance.</li><li><strong>Scenarios:</strong> Practice trade-off decisions; explain why each alternative is weaker.</li><li><strong>Repair:</strong> Re-study your weakest domains only.</li><li><strong>Exam readiness:</strong> Light review, Pearson system/ID checks, rest.</li></ol></div></section>
+<section id="fourteen"><div class="wrap article"><div class="eyebrow">14-day foundation</div><h2>For deeper learning and retention.</h2><ol><li>Exam guide + diagnostic self-assessment.</li><li>Claude/product/model fundamentals.</li><li>Prompt engineering.</li><li>Context engineering and knowledge strategy.</li><li>Tool use.</li><li>MCP / integrations.</li><li>RAG and grounding.</li><li>Agents and orchestration.</li><li>Claude Code / developer workflows where relevant.</li><li>Evaluation and observability.</li><li>Security, governance and responsible AI.</li><li>Architecture / business trade-offs for your role.</li><li>Original practice + weak-area review.</li><li>Light revision + exam logistics.</li></ol></div></section></main>
+<script>
+function buildPlan(){
+const c=document.getElementById('certSel').value,e=document.getElementById('expSel').value,d=document.getElementById('daysSel').value;
+const focus={
+associate:'prioritize output evaluation, workflow integration, governance, prompting, model selection, configuration and troubleshooting',
+developer:'prioritize API/model foundations, production prompting, tools/agents, Claude Code, MCP, evals, tracing and security',
+architectf:'prioritize agentic architecture, Claude Code workflows, prompting/structured output, MCP/tool design, context and reliability',
+architectp:'prioritize end-to-end solution design, enterprise integration, safety controls, evaluation gates, stakeholder trade-offs and operational handoff'
+}[c];
+const pace=d==='7'?'Use a sprint: official scope → highest-value concepts → scenarios → targeted repair.':'Use two phases: first learn the full scope, then spend the second week on scenarios, weak areas and review.';
+const exp=e==='new'?'Spend roughly 65% of your time learning concepts and 35% practicing scenarios.':e==='some'?'Use roughly a 50/50 split between concept review and scenario practice.':'Spend roughly 35% on review and 65% on scenarios, gaps and decision trade-offs.';
+document.getElementById('planOut').innerHTML=`<p><strong>${pace}</strong></p><p>${exp}</p><p>For this certification, ${focus}.</p><p class="notice">Always begin with the current official exam guide; it is the authoritative scope.</p>`;
+}
+</script><footer class="footer"><div class="wrap">
+<p><strong>Independent community resource.</strong> Not affiliated with or endorsed by Anthropic. Claude and Anthropic are trademarks of Anthropic PBC.</p>
+<p>Certification details can change. Official Anthropic resources are the source of truth. Last verified: 1 September 2026.</p>
+<p>© <span data-year></span> Claude Certification Hub.</p></div></footer><script src="assets/script.js"></script></body></html>
